@@ -6,7 +6,7 @@ B_secret = 15 #b
 
 print("Publicly Shared Prime :", shared_prime)
 print("Publicly Shared Base : ", shared_base)
-
+//
 A_public = (shared_base**A_secret) % 23
 print("A pub key : ", A_public)
 print("A priv key : ", A_secret)
