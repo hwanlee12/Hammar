@@ -30,7 +30,7 @@ def enc_file(base, in_filename, out_filename, chunksize=64*1024):
                     chunk += b' ' * (16 - len(chunk) % 16)
 
                 outfile.write(encryptor.encrypt(chunk))
-
+#dfsfsdfsdfsdfsdfsdfsfs
 def search_enc(path):
     try:
         files = os.listdir(path)
