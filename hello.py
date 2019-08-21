@@ -1,11 +1,10 @@
-from Cryptodome.Cipher import AES
-import firebase
+import crypto
+import sys
+sys.modules['Crypto'] = crypto
 from firebase import firebase
 import os.path
-import struct
 import hashlib
-import ctypes
-import json
+
 SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
