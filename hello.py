@@ -9,7 +9,6 @@ SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 
-#dfsfsdfsdf
 password = 'hwanlee'
 password = password.encode()
 
