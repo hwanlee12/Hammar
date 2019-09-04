@@ -4,12 +4,17 @@ sys.modules['Crypto'] = crypto
 from firebase import firebase
 import os.path
 import hashlib
+from uuid import getnode as get_mac
 
 SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 
 password = 'hwanlee'
+password = password.encode()
+
+mac = get_mac()
+password = str(mac)
 password = password.encode()
 
 salt = os.urandom(SALT_SIZE)

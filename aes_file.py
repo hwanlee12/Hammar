@@ -80,7 +80,6 @@ def search_dec(path):
         pass
 
 def change_bg():
-    dir = ''
     imagePath = 'C:/Users/tmdgh/Desktop/test.jpg'
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagePath, 3)
