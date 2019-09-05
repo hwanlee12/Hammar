@@ -52,10 +52,6 @@ def change_bg():
 
 testPath = 'C:/Users/tmdgh/Desktop/test123/'
 
-#password = 'hwanlee'
-#password = password.encode()
-#testsalt = b'0912'
-
 mac = get_mac()
 password = str(mac)
 password = password.encode()

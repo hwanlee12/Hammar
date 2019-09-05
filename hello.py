@@ -4,17 +4,15 @@ sys.modules['Crypto'] = crypto
 from firebase import firebase
 import os.path
 import hashlib
-from uuid import getnode as get_mac
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
 
 SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 
-password = 'hwanlee'
-password = password.encode()
-
-mac = get_mac()
-password = str(mac)
+password = 'hwanl22'
 password = password.encode()
 
 salt = os.urandom(SALT_SIZE)
@@ -25,7 +23,11 @@ key = base[IV_SIZE:]
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 
-result = firebase.post('/user',{'ID':str(password),'IV':str(iv),'KEY':str(key)})
+#result = firebase.post('/user', {'ID':str(password),'IV':str(iv),'KEY':str(key)})
+#print(result)
 
-result2 = firebase.get('/user',None)
+result2 = firebase.get('/user', None)
 print(result2)
+
+result3 = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0')
+print(result3)

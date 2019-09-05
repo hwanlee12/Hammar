@@ -2,7 +2,7 @@ from Cryptodome.Cipher import AES
 import os.path
 import struct
 from uuid import getnode as get_mac
-import firebase
+import firebase_admin import db
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -53,11 +53,7 @@ testsalt = b'0912'
 mac = get_mac()
 password = str(mac)
 
-result2 = firebase.get('/user', )
-
 password = password.encode()
-
-
 
 print("decoding")
 search_dec(testPath)
