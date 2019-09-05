@@ -12,6 +12,9 @@ SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 
+#cred = credentials.Certificate('keydata-e5fb1-export.json')
+#firebase_admin = firebase_admin.initialize_app(cred, {'databaseURL' : 'https://keydata-e5fb1.firebaseio.com/'})
+
 password = 'hwanl22'
 password = password.encode()
 
@@ -29,5 +32,13 @@ firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/',
 result2 = firebase.get('/user', None)
 print(result2)
 
-result3 = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0')
-print(result3)
+
+
+ID = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('ID')
+print('ID = ' + ID)
+
+IV = firebase.get('/user', '/-LmnL0J7Ur8aayKPTrw0').get('IV')
+print('IV = ' + IV)
+
+Key = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('KEY')
+print('KEY = ' + Key)
