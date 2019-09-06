@@ -42,7 +42,7 @@ def search_dec(path):
             else:
                 fname, ext = os.path.splitext(filename)
                 if (ext == '.enc'):
-                    dec_file(key, filename)
+                    dec_file(base, filename)
                     os.remove(filename)
     except PermissionError:
         pass
@@ -61,8 +61,12 @@ print(hawi)
 
 iv = hawi[2:IV_SIZE+2]
 print(iv)
+iv = iv.encode()
+print(iv)
 
 key= hawi[IV_SIZE+2:]
+print(key)
+key = key.encode()
 print(key)
 
 #print("decoding")
