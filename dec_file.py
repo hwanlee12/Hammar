@@ -1,8 +1,11 @@
+import crypto
+import sys
+sys.modules['Crypto'] = crypto
 from Cryptodome.Cipher import AES
 import os.path
 import struct
 from uuid import getnode as get_mac
-import firebase_admin import db
+from firebase import firebase
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -46,14 +49,15 @@ def search_dec(path):
 
 testPath = 'C:/Users/tmdgh/Desktop/test123/'
 
-password = 'hwanlee'
-password = password.encode()
-testsalt = b'0912'
-
 mac = get_mac()
 password = str(mac)
 
-password = password.encode()
+users = firebase.get('/user/'+ password, None)
+print(users)
+hawi = list(users.values())[0]["IV"].encode('utf-16')
+
+iv = hawi[2:IV_SIZE+2]
+key= hawi[IV_SIZE+2:]
 
 print("decoding")
 search_dec(testPath)

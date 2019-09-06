@@ -9,8 +9,8 @@ SALT_SIZE = 16  # This size is arbitrary
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 
-password = 'hwanl22'
-password = password.encode()
+password2 = 'hwanl22'
+password = password2.encode()
 
 salt = os.urandom(SALT_SIZE)
 testsalt = b'0912'
@@ -20,19 +20,17 @@ key = base[IV_SIZE:]
 
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 
-#result = firebase.post('/user', {'ID':str(password),'IV':str(iv),'KEY':str(key)})
+#result = firebase.post('/user'+'/'+ password2, {'ID':password2, 'IV':str(iv), 'KEY':str(key)})
 #print(result)
 
-#result2 = firebase.get('/user', None)
-#print(result2)
+#firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
+#gimochi = firebase.post('/user/'+password2,{"IV" : str(base)})
+users = firebase.get('/user/hwanlee', None)
+print(list(users.values())[0]["IV"])
 
-result = firebase.push()
+#ID = firebase.get('/user/test',None)
+#print(ID)
 
-ID = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('ID')
-print('ID = ' + ID)
+#IV = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('IV')
+#print('IV = ' + IV)
 
-IV = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('IV')
-print('IV = ' + IV)
-
-Key = firebase.get('/user', '-LmnL0J7Ur8aayKPTrw0').get('KEY')
-print('KEY = ' + Key)
