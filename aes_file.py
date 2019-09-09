@@ -99,7 +99,7 @@ key = base[IV_SIZE:]
 print("encoding")
 search_enc(testPath)
 
-change_bg()
+#change_bg()
 
 print("decoding")
-search_dec(testPath)
+#search_dec(testPath)

