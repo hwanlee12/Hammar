@@ -3,9 +3,9 @@ import sys
 sys.modules['Crypto'] = crypto
 from Cryptodome.Cipher import AES
 import os.path
+import hashlib
 import struct
 from uuid import getnode as get_mac
-from firebase import firebase
 
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
@@ -49,15 +49,20 @@ def search_dec(path):
 
 testPath = 'C:/Users/tmdgh/Desktop/test124/'
 
+
 mac = get_mac()
-password = str(mac)
 
-firebase = firebase.FirebaseApplication('https://keydata-e5fb1.firebaseio.com/', None)
-users = firebase.get('/user' + '/' + password, None)
-firebase.delete('/user' + '/' + password, None)
+salt2 = mac
+salt2 = (salt2 * 5 * 2 + 7) % 1000000
+salt2 = salt2.encode()
 
-base2 = list(users.values())[0]["Base"]
-base = base2.encode('latin-1')
+password2 = str(mac)
+password = password2.encode()
 
-print("decoding")
+#salt = os.urandom(SALT_SIZE)
+
+base = hashlib.pbkdf2_hmac('sha256', password, salt2, 100000, dklen=IV_SIZE + KEY_SIZE)
+iv = base[0:IV_SIZE]
+key = base[IV_SIZE:]
+
 search_dec(testPath)
