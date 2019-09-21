@@ -21,7 +21,7 @@ def dec_file(base, in_filename, out_filename=None, chunksize=24*1024):
     with open(in_filename, 'rb') as infile:
         origsize = struct.unpack('<Q', infile.read(struct.calcsize('Q')))[0]
         iv = infile.read(16)
-        decryptor = AES.new(key, AES.MODE_CFB, iv)
+        decryptor = AES.new(key, AES.MODE_CBC, iv)
 
         with open(out_filename, 'wb') as outfile:
             while True:
