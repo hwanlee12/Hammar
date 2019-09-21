@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9612274-5892-432a-b0f0-1e23e253a53b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dec_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/dec_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enc_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/enc_file.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/enc_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="523">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -29,8 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dec_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+            <state>
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -69,8 +68,8 @@
         <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/test_exe.py" />
         <option value="$PROJECT_DIR$/aes_file.py" />
-        <option value="$PROJECT_DIR$/dec_file.py" />
         <option value="$PROJECT_DIR$/enc_file.py" />
+        <option value="$PROJECT_DIR$/dec_file.py" />
       </list>
     </option>
   </component>
@@ -86,7 +85,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,6 +96,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -105,7 +104,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/venv/encrypt_file.py&#10;C:/Users/tmdgh/Desktop/학교/해머-랜섬웨어/코드/aes_file.py&#10;C:/Users/tmdgh/Desktop/학교/해머-랜섬웨어/코드/venv/enc_file.py" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -457,6 +456,9 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/src/python-firebase" />
+    </ignored-roots>
     <MESSAGE value="Ham" />
     <MESSAGE value="test345" />
     <MESSAGE value="test0821" />
@@ -535,9 +537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aes_file.spec">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/aes_file.spec" />
     <entry file="file://$PROJECT_DIR$/aes_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -550,8 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dec_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+        <state>
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -560,8 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/enc_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="523">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
