@@ -54,6 +54,7 @@ mac = get_mac()
 
 salt2 = mac
 salt2 = (salt2 * 5 * 2 + 7) % 1000000
+salt2 = str(salt2)
 salt2 = salt2.encode()
 
 password2 = str(mac)

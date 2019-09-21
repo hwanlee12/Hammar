@@ -58,12 +58,11 @@ mac = get_mac()
 
 salt2 = mac
 salt2 = (salt2 * 5 * 2 + 7) % 1000000
+salt2 = str(salt2)
 salt2 = salt2.encode()
 
 password2 = str(mac)
 password = password2.encode()
-
-salt = os.urandom(SALT_SIZE)
 
 base = hashlib.pbkdf2_hmac('sha256', password, salt2, 100000, dklen=IV_SIZE + KEY_SIZE)
 iv = base[0:IV_SIZE]
