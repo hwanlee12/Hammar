@@ -16,7 +16,7 @@ def enc_file(base, in_filename, out_filename, chunksize=64*1024):
     iv = base[0:IV_SIZE]
     key = base[IV_SIZE:]
 
-    encryptor = AES.new(key, AES.MODE_CFB, iv)
+    encryptor = AES.new(key, AES.MODE_CBC, iv)
     filesize = os.path.getsize(in_filename)
 
     with open(in_filename, 'rb') as infile:
